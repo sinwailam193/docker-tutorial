@@ -17,5 +17,14 @@ To get inside the terminal of a image:
 To get inside the terminal of a running container:
 ```docker exec -it [container-id] bash```
 
-To run a container that has exited:
+To run a container that has exited in background:
 ```docker start [container-id]
+
+# For Docker Compose
+
+Similar to docker run image (--build for re building the image)
+(-d is for running it in the background)
+```docker-compose up [--build] [-d]```
+
+stop containers
+```docker-compose down```
