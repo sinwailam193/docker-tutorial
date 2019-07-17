@@ -9,7 +9,7 @@ To build with tag name:
 ```docker build -t [image name] ./```
 
 To build with Dockerfile.dev
-```docker build -f Dockerfile.dev [image id]
+```docker build -f Dockerfile.dev -t [image name] .```
 
 To run the app and using volume for live file update:
 ```docker run -p port:port -v /app/node_modules -v $(pwd):/app [image name | image id]```
