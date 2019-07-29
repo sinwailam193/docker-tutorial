@@ -27,7 +27,7 @@ To get inside the terminal of a running container and execute other command:
 ```docker exec -it [container-id] yarn test```
 
 To run a container that has exited in background:
-```docker start [container-id]
+```docker start [container-id]```
 
 # For Docker Compose
 
