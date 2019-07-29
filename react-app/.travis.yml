@@ -1,0 +1,9 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t sinwailam193/react-app -f Dockerfile.dev .
+script:
+    - docker run -e CI=true sinwailam193/react-app yarn test -- --coverage
