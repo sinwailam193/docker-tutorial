@@ -7,3 +7,15 @@ before_install:
     - docker build -t sinwailam193/react-app -f Dockerfile.dev .
 script:
     - docker run -e CI=true sinwailam193/react-app yarn test -- --coverage
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-southeast-1"
+    app: "react-app"
+    env: "ReactApp-env"
+    bucket_name: "elasticbeanstalk-ap-southeast-1-[bucket_name_number]"
+    bucket_path: "react-app"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"
